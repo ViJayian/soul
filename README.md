@@ -1,50 +1,41 @@
 <p align="center" >
-    <a href="https://dromara.org"><img src="https://yu199195.github.io/images/soul/soul-logo.png" width="45%"></a>
+    <a href="https://shenyu.apache.org/"><img src="https://shenyu.apache.org/img/logo/apache-shenyu.png" width="45%"></a>
 </p>
 <p align="center">
-  <strong>Scalable,High Performance,Responsive API Gateways</strong>
+  <strong>Scalable, High Performance, Responsive API Gateway Solution for all MicroServices</strong>
 </p>
 <p align="center">
-  <a href="https://dromara.org">https://dromara.org/</a>
-</p>
-
-<p align="center">
-  English | <a href="https://github.com/dromara/soul/blob/master/README_cn.md">简体中文</a>
+  <a href="https://shenyu.apache.org/">https://shenyu.apache.org/</a>
 </p>
 
 <p align="center">
-    <a target="_blank" href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.dromara%22%20AND%soul">
-        <img src="https://img.shields.io/maven-central/v/org.dromara/soul.svg?label=maven%20central" />
+  English | <a href="https://github.com/apache/shenyu/blob/master/README_CN.md">简体中文</a>
+</p>
+
+<p align="center">
+    <a target="_blank" href="https://search.maven.org/search?q=g:org.apache%20AND%20a:shenyu">
+        <img src="https://img.shields.io/maven-central/v/org.apache/shenyu.svg?label=maven%20central" />
     </a>
-    <a target="_blank" href="https://github.com/Dromara/soul/blob/master/LICENSE">
+    <a target="_blank" href="https://github.com/apache/shenyu/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?label=license" />
     </a>
     <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img src="https://img.shields.io/badge/JDK-8+-green.svg" />
     </a>
-    <a target="_blank" href="https://github.com/dromara/soul">
-        <img src="https://github.com/dromara/soul/workflows/build/badge.svg" />
+    <a target="_blank" href="https://github.com/apache/shenyu/actions">
+        <img src="https://github.com/apache/shenyu/workflows/ci/badge.svg" />
     </a>
-    <a href="https://www.codacy.com/app/yu199195/soul?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Dromara/soul&amp;utm_campaign=Badge_Grade">
-        <img src="https://api.codacy.com/project/badge/Grade/4367ffad5b434b7e8078b3a68cc6398d"/>
-    </a>
-    <a target="_blank" href='https://gitee.com/shuaiqiyu/soul/stargazers'>
-        <img src='https://gitee.com/shuaiqiyu/soul/badge/star.svg?theme=gvp' alt='gitee stars'/>
+   <a target="_blank" href='https://github.com/apache/shenyu'>
+        <img src="https://img.shields.io/github/forks/apache/shenyu.svg" alt="github forks"/>
    </a>
-   <a target="_blank" href='https://github.com/dromara/soul'>
-        <img src="https://img.shields.io/github/forks/dromara/soul.svg" alt="github forks"/>
+   <a target="_blank" href='https://github.com/apache/shenyu'>
+        <img src="https://img.shields.io/github/stars/apache/shenyu.svg" alt="github stars"/>
    </a>
-   <a target="_blank" href='https://github.com/dromara/soul'>
-        <img src="https://img.shields.io/github/stars/dromara/soul.svg" alt="github stars"/>
+   <a target="_blank" href='https://github.com/apache/shenyu'>
+        <img src="https://img.shields.io/github/contributors/apache/shenyu.svg" alt="github contributors"/>
    </a>
-   <a target="_blank" href='https://github.com/dromara/soul'>
-        <img src="https://img.shields.io/github/contributors/dromara/soul.svg" alt="github contributors"/>
-   </a>     
-   <a href="https://github.com/Dromara/soul">
-        <img src="https://tokei.rs/b1/github/Dromara/soul?category=lines"/>
-   </a>
-   <a target="_blank" href="https://codecov.io/gh/dromara/soul">
-        <img src="https://codecov.io/gh/dromara/soul/branch/master/graph/badge.svg" />
+   <a target="_blank" href="https://codecov.io/gh/apache/incubator-shenyu">
+        <img src="https://codecov.io/gh/apache/incubator-shenyu/branch/master/graph/badge.svg" />
    </a>
 </p>
 <br/>
@@ -53,49 +44,53 @@
 
 # Architecture
  
- ![](https://yu199195.github.io/images/soul/soul-framework.png)  
+ ![](https://shenyu.apache.org/img/architecture/shenyu-framework.png)  
  
 -------------------------------------------------------------------------------- 
   
-# Execution Flow
+# Mind maps
  
- ![](https://yu199195.github.io/images/soul/soul-handler.png)
+ ![](https://shenyu.apache.org/img/shenyu/activite/shenyu-xmind.png)
  
 --------------------------------------------------------------------------------  
   
 # Modules
 
- * soul-admin : Plug-in and other information configuration management background
+ * shenyu-admin : plugins and other configuration information management background
  
- * soul-bootstrap : With the startup project, users can refer to
+ * shenyu-bootstrap : with the startup project, users can refer to
  
- * soul-client : User fast access with springMvc,dubbo,springCloud
+ * shenyu-client : user fast access with Spring MVC, Dubbo, Spring Cloud.
   
- * soul-common : Framework common class
+ * shenyu-common : framework common class
  
- * soul-dist : build project
+ * shenyu-disruptor : based on disruptor Enclosure
+ 
+ * shenyu-register-center : rpc type register for shenyu-client
+ 
+ * shenyu-dist : build project
 
- * soul-metrics : metrics impl by prometheus.
+ * shenyu-metrics : metrics impl by prometheus.
  
- * soul-plugin : soul provider plugin collection.
+ * shenyu-plugin : ShenYu provider plugin collection.
  
- * soul-spi : soul spi define.
+ * shenyu-spi : ShenYu spi define.
  
- * soul-spring-boot-starter : Support for the spring boot starter
+ * shenyu-spring-boot-starter : support for the spring boot starter
  
- * soul-sync-data-center : provider zookeeper, http, websocket, nacos to sync data
+ * shenyu-sync-data-center : provider ZooKeeper, HTTP, WebSocket, Nacos to sync data
  
- * soul-test : the rpc test project
+ * shenyu-examples : the RPC examples project
  
- * soul-web : Core processing packages include plug-ins, request routing and forwarding, and so on
+ * shenyu-web : core processing packages including plugins, request routing and forwarding, and so on
  
 --------------------------------------------------------------------------------   
  
 # Features
 
-   * It provides plugins such as current limiting, fusing, forwarding, routing monitoring and so on.
+   * ShenYu provides ability such as current limiting, fusing, forwarding, routing monitoring and so on by its plugins.
    
-   * Seamless docking with HTTP,Restful,websocket,dubbo and springcloud.
+   * Support HTTP, RESTFul, WebSocket, Dubbo, GRPC, Tars and Spring Cloud Proxy.
    
    * Plug-in hot plug, users can customize the development.
    
@@ -103,21 +98,21 @@
 
    * Support for cluster deployment.
    
-   * Support A/B test and grayscale publishing。
+   * Support A/B test and grayscale publishing.
    
 --------------------------------------------------------------------------------  
  
 # Plugin
 
- Whenever a request comes in ,Soul Execute all open plug-ins through the chain of responsibility.
+ Whenever a request comes in, ShenYu will execute it by all enabled plugins through the chain of responsibility.
  
- Plugins are the heart of soul And plug-ins are extensible and hot-pluggable.
+ As the heart of ShenYu, plugins are extensible and hot-pluggable.
  
- Different plug-ins do different things 
+ Different plugins do different things.
  
- Of course, users can also customize plug-ins to meet their own needs.
+ Of course, users can also customize plugins to meet their own needs.
  
- If you want to customize, see [plugin-extend](https://dromara.org/website/zh-cn/docs/soul/extend.html)
+ If you want to customize, see [custom-plugin](https://shenyu.apache.org/projects/shenyu/custom-plugin/)
  
 --------------------------------------------------------------------------------  
  
@@ -127,7 +122,7 @@
   
   Selector is your first route, It is coarser grained, for example, at the module level.
   
-  Rule is your second route and what do you think your request should do,For example a method level in a module.
+  Rule is your second route and what do you think your request should do. For example a method level in a module.
   
   The selector and the rule match only once, and the match is returned. So the coarsest granularity should be sorted last.
  
@@ -135,11 +130,9 @@
    
 # Data Caching & Data Sync
  
-  All data is cached ConcurrentHashMap in the JVM So it's very fast.
+  Since all data have been cached using ConcurrentHashMap in the JVM, it's very fast.
   
-  When the user is managing changes in the background,
-  
-  Soul dynamically updates the cache by listening to the zookeeper node, websocket push,http longPull.
+  When user have changed the configuration in the background management, ShenYu wiil dynamically updates its cache by listening to the ZooKeeper node, WebSocket push, HTTP longPull.
   
   ![](https://yu199195.github.io/images/soul/soul-config-processor.png)
   
@@ -151,106 +144,31 @@
  
    * JDK 1.8+
    
-   * Mysql
-   
 --------------------------------------------------------------------------------     
    
 # About
   
-   Soul Has been used in our production environment,Its performance and flexibility allow us to use up very cool.
+   ShenYu has been used widely in more and more systems in many companies, and it's simple and convenient to integrate Services/APIs with the high performance and flexibility.
    
-   In double 11, we deployed 6 clusters, which supported a large volume of our business.
+   In double eleven online shopping carnival of China, ShenYu clusters successfully supported a large volume of internet business.
    
 --------------------------------------------------------------------------------  
     
 # Document & Website
 
-[![EN doc](https://img.shields.io/badge/document-English-blue.svg)](https://dromara.org/website/en-us/docs/soul/soul.html)
-[![CN doc](https://img.shields.io/badge/document-Chinese-blue.svg)](https://dromara.org/website/zh-cn/docs/soul/soul.html)
+[![EN doc](https://img.shields.io/badge/document-English-blue.svg)](https://shenyu.apache.org/projects/shenyu/overview)
+[![CN doc](https://img.shields.io/badge/document-Chinese-blue.svg)](https://shenyu.apache.org/zh/projects/shenyu/overview)
   
 --------------------------------------------------------------------------------  
         
 # Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/Dromara/soul.svg)](https://starchart.cc/Dromara/soul)
-
---------------------------------------------------------------------------------  
-
-# Videos
-
-* [evn setup 01 ](http://www.iqiyi.com/w_19s6521605.html)
-
-* [evn setup 02 ](http://www.iqiyi.com/w_19s65203ap.html)
-
-* [source code debug](http://www.iqiyi.com/w_19s650tbol.html)
-
-* [plugins](http://www.iqiyi.com/w_19s651zyo9.html)
+[![Stargazers over time](https://starchart.cc/apache/incubator-shenyu.svg)](https://starchart.cc/apache/incubator-shenyu.svg)
 
 --------------------------------------------------------------------------------  
 
 # Known Users
 
-In order of registration, More access companies are welcome to register at[https://github.com/Dromara/soul/issues/68](https://github.com/Dromara/soul/issues/68) (For open source users only)
+In order of registration, More access companies are welcome to register at [https://github.com/apache/incubator-shenyu/issues/68](https://github.com/apache/incubator-shenyu/issues/68) (For open source users only)
 
-<table>
-  <tbody>
-    <tr>
-      <td><img src="https://yu199195.github.io/images/soul/users/sibu.jpg"  width="1800" height="90" alt="思埠集团"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/keking.png"  width="1800" height="90" alt="凯京集团"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/caibeike.png"  width="1800" height="90" alt="彩贝壳"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/jiangsuyonggang.jpg"  width="1800" height="90" alt="江苏永钢集团"/>
-    </tr>
-  </tbody>
-   <tbody>
-       <tr>
-         <td><img src="https://yu199195.github.io/images/soul/users/fangfutong.png"  width="1800" height="90" alt="上海方付通科技有限公司"/>
-         <td><img src="https://yu199195.github.io/images/soul/users/lixiang.jpg"  width="1800" height="90" alt="上海理想信息产业集团有限公司"/>
-         <td><img src="https://yu199195.github.io/images/soul/users/kaipuyun.png"  width="1800" height="90" alt="彩贝壳"/>
-         <td><img src="https://yu199195.github.io/images/soul/users/songda.png"  width="1800" height="90" alt="江苏永钢集团"/>
-       </tr>
-    </tbody>
-    <tbody>
-           <tr>
-             <td><img src="https://yu199195.github.io/images/soul/users/aoyou.jpg"  width="1800" height="90" alt="浙江翱游科技有限公司"/>
-             <td><img src="https://yu199195.github.io/images/soul/users/cheyipai.jpg"  width="1800" height="90" alt="车易拍(北京)汽车技术服务有限公司"/>
-             <td><img src="https://yu199195.github.io/images/soul/users/caomao.jpg"  width="1800" height="90" alt="上海草帽科技"/>
-             <td><img src="https://yu199195.github.io/images/soul/users/zuyun.jpg"  width="1800" height="90" alt="深圳竹云科技有限公司"/>
-           </tr>
-     </tbody>
-      <tbody>
-                <tr>
-                  <td><img src="https://yu199195.github.io/images/soul/users/hezhi.png"  width="1800" height="90" alt="深圳盒知科技"/>
-                  <td><img src="https://yu199195.github.io/images/soul/users/qidianyun.jpg"  width="1800" height="90" alt="杭州奇点云科技"/>
-                  <td><img src="https://yu199195.github.io/images/soul/users/wanwei.gif"  width="1800" height="90" alt="万威科技"/>
-                  <td><img src="https://yu199195.github.io/images/soul/users/wuyiyuntong.jpg"  width="1800" height="90" alt="武汉物易云通网络科技有限公司"/>
-                </tr>
-      </tbody>
-      <tbody>
-                <tr>
-                  <td><img src="https://yu199195.github.io/images/soul/users/haokangzaijia.jpg"  width="1800" height="90" alt="好慷在家"/>
-                  <td><img src="https://yu199195.github.io/images/soul/users/shansong.jpg"  width="1800" height="90" alt="闪送科技"/>
-                  <td><img src="https://yu199195.github.io/images/soul/users/guojiadianwang.jpg"  width="1800" height="90" alt="国家电网"/>
-                  <td><img src="https://yu199195.github.io/images/soul/users/caissa.jpg"  width="1800" height="90" alt="凯撒旅游"/>
-                </tr>
-      </tbody>     
-</table>
-
-
-# Support  
-
-<table>
-  <thead>
-    <th>WeChat</th>
-    <th>QQ</th>
-    <th>Taro Source</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td><img src="https://yu199195.github.io/images/public.jpg"   alt="微信公众号"/>
-      <td><img src="https://yu199195.github.io/images/soul-qq.png"  alt="QQ交流群"/>
-      <td><img src="http://www.iocoder.cn/images/common/erweima.jpg"  alt="芋道源码"/>
-    </tr>
-  </tbody>
-</table>
-  
- 
+All Users : [Known Users](https://shenyu.apache.org/awesome/)

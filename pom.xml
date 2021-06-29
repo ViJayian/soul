@@ -19,84 +19,67 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.apache</groupId>
+        <artifactId>apache</artifactId>
+        <version>21</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>org.dromara</groupId>
-    <artifactId>soul</artifactId>
+    <groupId>org.apache.shenyu</groupId>
+    <artifactId>shenyu</artifactId>
     <packaging>pom</packaging>
-    <version>2.2.1</version>
-    <name>soul</name>
+    <version>2.4.0-SNAPSHOT</version>
+    <name>shenyu</name>
     <modules>
-        <module>soul-admin</module>
-        <module>soul-common</module>
-        <module>soul-web</module>
-        <module>soul-spring-boot-starter</module>
-        <module>soul-bootstrap</module>
-        <module>soul-client</module>
-        <module>soul-plugin</module>
-        <module>soul-sync-data-center</module>
-        <module>soul-metrics</module>
-        <module>soul-spi</module>
-        <module>soul-dist</module>
+        <module>shenyu-admin</module>
+        <module>shenyu-common</module>
+        <module>shenyu-web</module>
+        <module>shenyu-spring-boot-starter</module>
+        <module>shenyu-bootstrap</module>
+        <module>shenyu-client</module>
+        <module>shenyu-plugin</module>
+        <module>shenyu-sync-data-center</module>
+        <module>shenyu-metrics</module>
+        <module>shenyu-spi</module>
+        <module>shenyu-register-center</module>
+        <module>shenyu-dist</module>
+        <module>shenyu-disruptor</module>
+        <module>shenyu-protocol</module>
     </modules>
-
-    <organization>
-        <name>dromara</name>
-        <url>http://www.dromara.org</url>
-    </organization>
 
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/Dromara/soul.git</url>
-        <connection>scm:git:https://github.com/Dromara/soul</connection>
-        <developerConnection>scm:git:git@github.com:Dromara/soul</developerConnection>
+        <url>https://github.com/apache/incubator-shenyu.git</url>
+        <connection>scm:git:https://github.com/apache/incubator-shenyu</connection>
+        <developerConnection>scm:git:git@github.com:apache/incubator-shenyu</developerConnection>
         <tag>${project.version}</tag>
     </scm>
 
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>https://github.com/Dromara/soul/issues</url>
+        <url>https://github.com/apache/incubator-shenyu/issues</url>
     </issueManagement>
 
-    <developers>
-        <developer>
-            <id>xiaoyu</id>
-            <name>xiaoyu(Myth)</name>
-            <email>549477611@qq.com</email>
-            <organization>org.dromara</organization>
-            <roles>
-                <role>author</role>
-            </roles>
-        </developer>
-    </developers>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-    </parent>
-
     <properties>
-        <jdk.version>1.8</jdk.version>
+        <java.version>1.8</java.version>
         <hutool.version>4.0.8</hutool.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jasypt.version>1.9.2</jasypt.version>
         <lombok.version>1.18.12</lombok.version>
         <springfox.version>2.6.1</springfox.version>
         <mybatis.starter.version>1.1.1</mybatis.starter.version>
-        <mysql.version>8.0.11</mysql.version>
+        <mysql.version>5.1.47</mysql.version>
         <druid.version>1.0.29</druid.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
-        <guava.version>[24.1.1,)</guava.version>
+        <guava.version>[30.1-jre,)</guava.version>
         <commons-collections4.version>4.1</commons-collections4.version>
         <reactor-spring.version>1.0.1.RELEASE</reactor-spring.version>
-        <commons-dbcp.version>1.2.1</commons-dbcp.version>
         <disruptor.version>3.4.0</disruptor.version>
         <hessian.version>4.0.38</hessian.version>
         <protostuff.version>1.0.8</protostuff.version>
@@ -107,21 +90,80 @@
         <gson.version>2.8.0</gson.version>
         <okhttp.version>3.7.0</okhttp.version>
         <mapstruct.version>1.3.1.Final</mapstruct.version>
-        <prometheus-java-client.version>0.6.0</prometheus-java-client.version>
-        <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
-        <frontend.plugin.skip>true</frontend.plugin.skip>
+        <prometheus-java-client.version>0.10.0</prometheus-java-client.version>
+        <prometheus-jmx.version>0.15.0</prometheus-jmx.version>
         <swagger.version>2.9.2</swagger.version>
-        <apache-rat-plugin.version>0.12</apache-rat-plugin.version>
         <sofa.rpc.version>5.7.6</sofa.rpc.version>
+        <tars.version>1.7.2</tars.version>
         <skipTests>false</skipTests>
         <undertow.version>2.2.2.Final</undertow.version>
-        <curator-test.version>3.3.0</curator-test.version>
+        <curator-test.version>4.0.1</curator-test.version>
         <wiremock.version>2.18.0</wiremock.version>
+        <zookeeper.version>3.5.6</zookeeper.version>
+        <zkclient.version>0.10</zkclient.version>
+        <shiro.version>1.7.0</shiro.version>
+        <jwt.version>3.12.0</jwt.version>
+        <motan.version>1.1.9</motan.version>
+        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+        <aspectjweaver.version>1.9.6</aspectjweaver.version>
+        <h2.version>1.4.200</h2.version>
+        <jetcd-core.version>0.5.0</jetcd-core.version>
+        <java-websocket.version>1.5.0</java-websocket.version>
+        <mockito.version>3.5.15</mockito.version>
+        <nacos-client.version>2.0.0</nacos-client.version>
+        <groovy.version>2.5.14</groovy.version>
+        <!--maven plugin version-->
+        <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
+        <apache-rat-plugin.version>0.12</apache-rat-plugin.version>
         <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.3</nexus-staging-maven-plugin.version>
+        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
+        <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <versions-maven-plugin.version>2.5</versions-maven-plugin.version>
+        <maven-checkstyle-plugin.version>3.1.0</maven-checkstyle-plugin.version>
+        <frontend-maven-plugin.version>1.6</frontend-maven-plugin.version>
+        <frontend-maven-plugin.node.version>v12.14.1</frontend-maven-plugin.node.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-core</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-transport-netty4</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-registry-zookeeper</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-springsupport</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
@@ -133,7 +175,6 @@
                 <version>${mapstruct.version}</version>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
             <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
@@ -167,6 +208,13 @@
                 <groupId>io.prometheus</groupId>
                 <artifactId>simpleclient_hotspot</artifactId>
                 <version>${prometheus-java-client.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.prometheus.jmx/collector -->
+            <dependency>
+                <groupId>io.prometheus.jmx</groupId>
+                <artifactId>collector</artifactId>
+                <version>${prometheus-jmx.version}</version>
             </dependency>
 
             <dependency>
@@ -245,13 +293,6 @@
                 <version>${reactor-spring.version}</version>
             </dependency>
 
-
-            <dependency>
-                <groupId>commons-dbcp</groupId>
-                <artifactId>commons-dbcp</artifactId>
-                <version>${commons-dbcp.version}</version>
-            </dependency>
-
             <dependency>
                 <groupId>com.caucho</groupId>
                 <artifactId>hessian</artifactId>
@@ -278,12 +319,12 @@
             <dependency>
                 <groupId>org.apache.zookeeper</groupId>
                 <artifactId>zookeeper</artifactId>
-                <version>3.5.6</version>
+                <version>${zookeeper.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.101tec</groupId>
                 <artifactId>zkclient</artifactId>
-                <version>0.10</version>
+                <version>${zkclient.version}</version>
             </dependency>
 
             <dependency>
@@ -304,6 +345,23 @@
                 <version>${swagger.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.tencent.tars</groupId>
+                <artifactId>tars-spring-boot-starter</artifactId>
+                <version>${tars.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy</artifactId>
+                <version>${groovy.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -329,24 +387,26 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-library</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-inline</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>ch.qos.logback</groupId>-->
-<!--            <artifactId>logback-classic</artifactId>-->
-<!--        </dependency>-->
     </dependencies>
 
     <distributionManagement>
@@ -362,43 +422,6 @@
 
     <profiles>
         <profile>
-            <id>soul-dashboard</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <frontend.plugin.skip>false</frontend.plugin.skip>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>${exec-maven-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>git submodule update</id>
-                                <phase>initialize</phase>
-                                <inherited>false</inherited>
-                                <configuration>
-                                    <executable>git</executable>
-                                    <arguments>
-                                        <argument>submodule</argument>
-                                        <argument>update</argument>
-                                        <argument>--init</argument>
-                                        <argument>--recursive</argument>
-                                    </arguments>
-                                </configuration>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
             <id>release</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -408,7 +431,7 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.3</version>
+                        <version>${nexus-staging-maven-plugin.version}</version>
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>ossrh</serverId>
@@ -419,7 +442,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+                        <version>${maven-gpg-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>verify</phase>
@@ -439,7 +462,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>${maven-source-plugin.version}</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -452,16 +475,18 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M4</version>
+                <version>${maven-surefire-plugin.version}</version>
                 <configuration>
-                    <!-- 略过整个单元测试的执行，不推荐 -->
                     <skip>${skipTests}</skip>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.3</version>
+                <version>${maven-javadoc-plugin.version}</version>
+                <configuration>
+                    <sourcepath>src/main/java</sourcepath>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -475,17 +500,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <encoding>UTF-8</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
+                <version>${maven-release-plugin.version}</version>
                 <configuration>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
@@ -494,14 +519,14 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
-                <version>2.5</version>
+                <version>${versions-maven-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${maven-checkstyle-plugin.version}</version>
                 <configuration>
-                    <configLocation>/script/soul_checkstyle.xml</configLocation>
+                    <configLocation>/script/shenyu_checkstyle.xml</configLocation>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     <excludes>**/transfer/**/*</excludes>
                 </configuration>
@@ -549,6 +574,8 @@
                         <exclude>**/spring.factories</exclude>
                         <exclude>**/spring.provides</exclude>
                         <exclude>/script/**</exclude>
+                        <exclude>**/lombok.config</exclude>
+                        <exclude>**/*.json</exclude>
                         <!-- IDE files -->
                         <exclude>**/*.iml</exclude>
                         <exclude>**/.idea/**</exclude>
@@ -570,10 +597,12 @@
                         <!-- document files -->
                         <exclude>**/*.md</exclude>
                         <excldue>**/*.MD</excldue>
+                        <excldue>**/*.conf</excldue>
+                        <excldue>**/*.tars</excldue>
                         <exclude>**/*.txt</exclude>
                         <exclude>**/docs/**</exclude>
                         <!-- UI files -->
-                        <exclude>/soul-dashboard/**</exclude>
+                        <exclude>/shenyu-dashboard/**</exclude>
                         <exclude>**/resources/static/</exclude>
                     </excludes>
                 </configuration>
